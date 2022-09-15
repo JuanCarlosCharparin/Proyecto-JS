@@ -1,0 +1,123 @@
+body {
+    background-color: aquamarine;
+    color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.titulo {
+    display: flex;
+    justify-content: center;
+
+}
+
+#resultado{
+   text-align: center;
+   font-size: 50px;
+   margin-top: 20px; 
+}
+
+#userImg {
+    width: 100px;
+    height: 100px;
+    margin-left: 250px;
+}
+
+#machineImg {
+    width: 100px;
+    height: 100px;
+    margin-right: 100px;
+    margin-left: 635px;
+}
+
+
+h2 {
+    margin-top: 3px;
+}
+
+#subtitulo {
+    display: flex;
+    justify-content: center;
+    margin-top: -30px;
+    font-size: 20px;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: row;
+    margin: 150px;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    align-items: center;
+}
+
+.tijera {
+    width: 210px;
+    height: 210px;
+    margin-right: 20px;
+    border-style: dashed;
+}
+
+.tijera img{
+    width: 210px;
+    height: 210px;
+    margin-right: 20px;
+    border-style: dashed;
+    
+}
+
+.piedra {
+    width: 210px;
+    height: 210px;
+    margin-right: 20px;
+    border-style: dashed;
+    
+}
+
+.piedra img {
+    width: 210px;
+    height: 210px;
+    margin-right: 20px;
+    border-style: dashed;
+    
+}
+
+.papel img {
+    width: 210px;
+    height: 210px;
+    border-style: dashed;
+}
+
+.papel {
+    width: 210px;
+    height: 210px;
+    border-style: dashed; 
+}
+
+.puntaje {
+    margin-top: 5px;
+    font-size: 20px;
+    flex-direction: row;
+}
+
+#user {
+    margin-left: 100px;
+    margin-top: -42px;
+}
+
+#machine {
+    margin-left: 100px;
+    margin-top: -42px;
+}
+
+
+footer {
+    text-align: center;
+    padding: 10px;
+}
+
+footer a{
+    color: black;
+    text-decoration: none;
+}

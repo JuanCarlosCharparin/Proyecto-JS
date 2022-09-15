@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+<body>
+    <div class="titulo">
+        <h1>Piedra, Papel o Tijera</h1>
+    </div>
+
+    <div id="resultado">
+        
+        <div id="subtitulo">
+            <h2>Elige una opción: </h2>
+        </div>
+
+    </div>
+
+    <div class="batalla">
+        <img id="userImg" src="./img/piedraImg.jpg" alt="">
+        <img id="machineImg" src="./img/piedraImgInvertida.jpg" alt="">
+    </div>
+    <div class="contenedor">
+        <button class="tijera" type="menu">
+            <img src="https://www.educima.com/dibujo-para-colorear-tijeras-dl27557.jpg" alt="" class="tijera">
+        </button>
+    
+        <button class="piedra"> 
+            <img class="piedra" src="data:image/png;base64,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" alt="">
+        </button>
+    
+        <button class="papel"> 
+            <img class="papel" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSB72OPQaxRPLOJDgTpje2vjOkQ1cXkPH9dw&usqp=CAU" alt="">
+        </button>
+
+    </div>
+
+    <div class="puntaje">
+        <p>Usuario: </p><p id="user">0</p>
+        <p>Maquina: </p><p id="machine">0</p>
+    </div>
+        
+
+    <footer>Hecho por Juan Carlos Charparin</footer>
+
+    <script src="script.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+</body>
+</html>
