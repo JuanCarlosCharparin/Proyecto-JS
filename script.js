@@ -42,12 +42,14 @@ papel1.addEventListener('click', () => {
     Jugar(papel)
 })
 
-/
+//Funcion principal
 function Jugar(usuario){
+    //variables
     let computer = ""
     const maquina = Math.floor(Math.random() * 3)
     const result = Resultado(usuario, maquina)
 
+    //fetch a servidor rapidapi
     const options = {
         method: 'GET',
         headers: {
@@ -55,7 +57,8 @@ function Jugar(usuario){
             'X-RapidAPI-Host': 'rock-paper-scissor2.p.rapidapi.com'
         }
     };
-   
+    
+    //pido respuesta a servidor de computer (oponente)
     if (maquina == 0){
         computer = "rock"
         fetch('https://rock-paper-scissor2.p.rapidapi.com/api/rock', options)
@@ -76,6 +79,7 @@ function Jugar(usuario){
             .catch(err => console.error(err));
     }
 
+    //Condicion para imagenes de usuario y maquina
     if (usuario == 0){userImg.src = "./img/piedraImg.jpg"}
     if (usuario == 1){userImg.src = "./img/papelImg.jpg"}
     if (usuario == 2){userImg.src = "./img/tijeraImg.jpg"}
@@ -85,7 +89,7 @@ function Jugar(usuario){
     if (computer == "scissor"){machineImg.src = "./img/tijeraImgInvertida.jpg"}
     
     
-
+    //Muestro resultados en la variable mostrarResult
     switch (result){
         case empate :
             mostrarResult.innerHTML = "EMPATE"
@@ -98,14 +102,14 @@ function Jugar(usuario){
             break   
     }
     
-    
+    //Actualizo local Storage segun sea el resultado
     if (mostrarResult.innerHTML == "GANASTE"){
         
         marcador1++
         localStorage.setItem("Usuario", marcador1)
         user.innerHTML = `
         ` + marcador1
-        
+        //Utilizo Toastify para mostrar quien es el ganador de la partida
         if(marcador1 == 3){
             Toastify({
                 text: "Ganaste la Partida",
@@ -118,19 +122,20 @@ function Jugar(usuario){
                 },
                 
               }).showToast();
+            //Reinicio marcador
             marcador1 = 0
             user.innerHTML = 0
             machine.innerHTML = 0
             marcador2 = 0
         }
     }
-    
+    //Actualizo local Storage segun sea el resultado
     if (mostrarResult.innerHTML == "PERDISTE"){
         marcador2++
         localStorage.setItem("Maquina", marcador2)
         machine.innerHTML = `
         ` + marcador2
-
+        //Utilizo Toastify para mostrar quien es el ganador de la partida
         if(marcador2 == 3){
             Toastify({
                 text: "Perdiste la Partida",
@@ -143,6 +148,7 @@ function Jugar(usuario){
                 },
                
               }).showToast();
+            //Reinicio marcador
             marcador2 = 0
             user.innerHTML = 0
             machine.innerHTML = 0
@@ -154,6 +160,7 @@ function Jugar(usuario){
             
 }
 
+//Funcion que determina ganador, perdedor y empate
 function Resultado(usuario, maquina){
     
     if (usuario == maquina){
