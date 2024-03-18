@@ -122,6 +122,8 @@ function Jugar(usuario){
                 },
                 
               }).showToast();
+
+              
             //Reinicio marcador
             marcador1 = 0
             user.innerHTML = 0
